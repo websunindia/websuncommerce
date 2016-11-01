@@ -56,7 +56,7 @@ app.all('/cart/placeorder/:status', cart);
 
 //app.listen(3000,function(){
 
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || 5000,function(){
 	
 	console.log("-------------------------------------------------------------");
 	console.log("Websuncommerce: started at localhost:" + process.env.PORT);
