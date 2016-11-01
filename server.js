@@ -56,6 +56,6 @@ app.all('/cart/placeorder/:status', cart);
 
 app.listen(3000,function(){
 	console.log("-------------------------------------------------------------")
-	console.log("Websun - Ecommerce: started at localhost:3000");
+	console.log("Websuncommerce: started at localhost:3000");
 	console.log("-------------------------------------------------------------")
 });
