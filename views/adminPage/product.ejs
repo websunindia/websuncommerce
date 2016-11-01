@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Quote Of The Day</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Bootstrap core CSS -->
+			<link rel="stylesheet" href="/public/lib/bootstrap/css/bootstrap.css">
+		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+		<!--[if lt IE 9]><script src="/public/lib/bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+			
+			<script src="/public/lib/bootstrap/js/ie-emulation-modes-warning.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+			<script src="/public/lib/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		
+	</head>
+	
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Websun - Commerce</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<% for(var i = 0; i<header_navigation.length; i++){ %>
+					<li><a href="<%= header_navigation[i].url %>"><%= header_navigation[i].title %></a></li>
+				<% } %>
+			</ul>
+		</div>
+	</nav>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-xs-12 col-md-12"><h3><%=page_title%></h3><p><%=page_description%></p></div>
+		</div>
+		
+		<div class="row">
+			<% if(typeof(alert)!='undefined' && alert){ %>
+				<div class="alert alert-<%=alert.type%>"><%=alert.message%></div>
+			<% } %> 
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12 col-xs-12 col-md-12">
+				<form method="post" class="form-inline">
+					<div class="form-group">
+						<label for="productName">Name: </label>
+						<input type="text" id="productName" name="productName" placeholder="Name" />
+					</div>
+					
+					<div class="form-group">
+						<label for="productName">Description: </label>
+						<input type="text" name="productDescription" placeholder="Description" />
+					</div>
+					
+					<div class="form-group">
+						<label for="productName">Price: </label>
+						<input type="text" name="productPrice" placeholder="Price" />
+					</div>
+					
+					<div class="form-group">
+						<label for="productName">Quantity: </label>
+						<input type="text" name="productQuantity" placeholder="Quantity"/>
+					</div>
+					
+					<button name="productSubmit" class="btn btn-primary">Add Product</button>
+					
+				</form>
+			</div>
+		</div>
+		
+		<div class="row">	
+			<div class="col-sm-12 col-xs-12 col-md-12">
+				<% if(typeof(products)!='undefined' && products){ %>
+					<table class="table table-stripped">
+						<thead>
+							<tr>
+								<th>Product</th>
+								<th>Description</th>
+								<th>Price</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<% for(var i = 0; i<products.length; i++) { %>
+						<tr>
+							<td><%=products[i].name%></td>
+							<td><%=products[i].description%></td>
+							<td><%=products[i].price%></td>
+							<td><%=products[i].quantity%></td>
+						</tr>
+						<% } %>
+						</table>
+				<% } %>
+			</div>
+		</div>
+	</div>
+	<script src="/public/lib/bootstrap/js/jquery-3.1.0.min.js"></script>
+</body>
+</html>
