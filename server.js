@@ -55,7 +55,9 @@ app.all('/cart/checkout', cart);
 app.all('/cart/placeorder/:status', cart);
 
 app.listen(3000,function(){
-	console.log("-------------------------------------------------------------")
+	
+	console.log("-------------------------------------------------------------");
 	console.log("Websuncommerce: started at localhost:3000");
-	console.log("-------------------------------------------------------------")
+	console.log("-------------------------------------------------------------");
+	
 });
